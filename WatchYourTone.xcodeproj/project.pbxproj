@@ -23,7 +23,7 @@
 		02035E8B226F626B00D9FD7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02035E8E226F626B00D9FD7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02035E90226F626B00D9FD7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81258ADE2271F8CD0002E9B9 /* Temporary Audio Storage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Temporary Audio Storage"; sourceTree = "<group>"; };
+		81258ADE2271F8CD0002E9B9 /* Temporary Audio Storage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Temporary Audio Storage"; path = "WatchYourTone/Temporary Audio Storage"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
