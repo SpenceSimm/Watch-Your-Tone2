@@ -12,6 +12,7 @@
 		02035E8A226F626900D9FD7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02035E88226F626900D9FD7A /* Main.storyboard */; };
 		02035E8C226F626B00D9FD7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02035E8B226F626B00D9FD7A /* Assets.xcassets */; };
 		02035E8F226F626B00D9FD7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02035E8D226F626B00D9FD7A /* LaunchScreen.storyboard */; };
+		02C6609D2271F9030083884A /* AudioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6609C2271F9030083884A /* AudioTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		02035E8B226F626B00D9FD7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02035E8E226F626B00D9FD7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02035E90226F626B00D9FD7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02C6609C2271F9030083884A /* AudioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				02035E84226F626900D9FD7A /* AppDelegate.swift */,
 				02035E86226F626900D9FD7A /* ViewController.swift */,
 				02035E88226F626900D9FD7A /* Main.storyboard */,
+				02C6609C2271F9030083884A /* AudioTableViewController.swift */,
 				02035E8B226F626B00D9FD7A /* Assets.xcassets */,
 				02035E8D226F626B00D9FD7A /* LaunchScreen.storyboard */,
 				02035E90226F626B00D9FD7A /* Info.plist */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02035E87226F626900D9FD7A /* ViewController.swift in Sources */,
+				02C6609D2271F9030083884A /* AudioTableViewController.swift in Sources */,
 				02035E85226F626900D9FD7A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
