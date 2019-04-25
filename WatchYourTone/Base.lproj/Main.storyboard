@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap &quot;begin&quot; to start recording audio" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBM-zG-5ur">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap &quot;begin&quot; to go to the recording screen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBM-zG-5ur">
                                 <rect key="frame" x="10" y="97" width="355" height="67"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="34" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Audio Recording View Controller-->
         <scene sceneID="buO-OF-Tsh">
             <objects>
-                <viewController id="sH1-NH-ukd" sceneMemberID="viewController">
+                <viewController id="sH1-NH-ukd" customClass="AudioRecordingViewController" customModule="WatchYourTone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PRD-YT-tmR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,6 +89,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tpv-B2-1WN"/>
                     </view>
+                    <connections>
+                        <outlet property="recordingButton" destination="z8R-G3-z4P" id="j50-wp-ze1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUx-th-45h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -129,7 +132,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maU-I3-xfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="134"/>
+            <point key="canvasLocation" x="1566" y="134"/>
         </scene>
     </scenes>
 </document>
