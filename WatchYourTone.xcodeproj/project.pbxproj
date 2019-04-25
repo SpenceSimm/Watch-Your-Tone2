@@ -12,6 +12,7 @@
 		02035E8A226F626900D9FD7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02035E88226F626900D9FD7A /* Main.storyboard */; };
 		02035E8C226F626B00D9FD7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02035E8B226F626B00D9FD7A /* Assets.xcassets */; };
 		02035E8F226F626B00D9FD7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02035E8D226F626B00D9FD7A /* LaunchScreen.storyboard */; };
+		81258ADF2271F8CD0002E9B9 /* Temporary Audio Storage in Resources */ = {isa = PBXBuildFile; fileRef = 81258ADE2271F8CD0002E9B9 /* Temporary Audio Storage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		02035E8B226F626B00D9FD7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02035E8E226F626B00D9FD7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02035E90226F626B00D9FD7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81258ADE2271F8CD0002E9B9 /* Temporary Audio Storage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Temporary Audio Storage"; path = "WatchYourTone/Temporary Audio Storage"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				02035E84226F626900D9FD7A /* AppDelegate.swift */,
 				02035E86226F626900D9FD7A /* ViewController.swift */,
 				02035E88226F626900D9FD7A /* Main.storyboard */,
+				81258ADE2271F8CD0002E9B9 /* Temporary Audio Storage */,
 				02035E8B226F626B00D9FD7A /* Assets.xcassets */,
 				02035E8D226F626B00D9FD7A /* LaunchScreen.storyboard */,
 				02035E90226F626B00D9FD7A /* Info.plist */,
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02035E8F226F626B00D9FD7A /* LaunchScreen.storyboard in Resources */,
+				81258ADF2271F8CD0002E9B9 /* Temporary Audio Storage in Resources */,
 				02035E8C226F626B00D9FD7A /* Assets.xcassets in Resources */,
 				02035E8A226F626900D9FD7A /* Main.storyboard in Resources */,
 			);
