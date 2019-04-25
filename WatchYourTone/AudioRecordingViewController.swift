@@ -14,6 +14,7 @@ class AudioRecordingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Asks user permission to record
         recordingSession = AVAudioSession.sharedInstance()
         
         do {
@@ -36,11 +37,12 @@ class AudioRecordingViewController: UIViewController {
     }
     
     
+    //Linked to the "Record" button
     @IBOutlet weak var recordingButton: UIButton!
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     
-    
+    //Placeholder func for now
     func loadRecordingUI() {
 //        recordingButton.setTitle("Tap to Record", for: .normal)
 //        recordingButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
@@ -48,9 +50,16 @@ class AudioRecordingViewController: UIViewController {
 //        view.addSubview(recordingButton)
     }
     
+    
+    
+    //Begins recording
     func startRecording() {
+        
+        //Creates the file initializer
         let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
         
+        
+        //Specifications for the file
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
@@ -58,22 +67,29 @@ class AudioRecordingViewController: UIViewController {
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
         
+        
+        //Attempts to start recording
         do {
             audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
             audioRecorder.delegate = self as! AVAudioRecorderDelegate
             audioRecorder.record()
             
+            //Sets the text in the button to "Tap to Stop" to stop the recording whenever the user wishes
             recordingButton.setTitle("Tap to Stop", for: .normal)
         } catch {
             finishRecording(success: false)
         }
     }
     
+    
+    //Creates the path for the file as a URL type variable
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
     
+    
+    //Ends the recording session. If it doesn't record properly, it asks to re-record. Otherwise, the text asks for another recording
     func finishRecording(success: Bool) {
         audioRecorder.stop()
         audioRecorder = nil
@@ -86,6 +102,8 @@ class AudioRecordingViewController: UIViewController {
         }
     }
     
+    
+    //Calls on the recording methods
     @objc func recordTapped() {
         if audioRecorder == nil {
             startRecording()
@@ -94,6 +112,8 @@ class AudioRecordingViewController: UIViewController {
         }
     }
     
+    
+    //Checks if the audio recording has been manually ended
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if !flag {
             finishRecording(success: false)
