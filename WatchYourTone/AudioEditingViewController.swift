@@ -10,6 +10,8 @@ import UIKit
 
 class AudioEditingViewController: UIViewController {
 
+    @IBOutlet weak var Pitch: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

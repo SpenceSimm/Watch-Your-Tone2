@@ -134,20 +134,33 @@
             </objects>
             <point key="canvasLocation" x="1566" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Audio Editing View Controller-->
         <scene sceneID="V4r-uJ-LAk">
             <objects>
-                <viewController id="Dd8-gy-efY" sceneMemberID="viewController">
+                <viewController id="Dd8-gy-efY" customClass="AudioEditingViewController" customModule="WatchYourTone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LXa-Kl-yka">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="C8j-gF-egr">
+                                <rect key="frame" x="14" y="472" width="347" height="31"/>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="B4t-FL-Wot" firstAttribute="bottom" secondItem="C8j-gF-egr" secondAttribute="bottom" constant="165" id="L86-Rt-Irn"/>
+                            <constraint firstItem="C8j-gF-egr" firstAttribute="leading" secondItem="B4t-FL-Wot" secondAttribute="leading" constant="16" id="azx-4W-iQC"/>
+                            <constraint firstItem="B4t-FL-Wot" firstAttribute="trailing" secondItem="C8j-gF-egr" secondAttribute="trailing" constant="16" id="xBM-0h-1JA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="B4t-FL-Wot"/>
                     </view>
+                    <connections>
+                        <outlet property="Pitch" destination="C8j-gF-egr" id="KrW-qk-3WU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DbZ-C8-tDI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2297" y="134"/>
+            <point key="canvasLocation" x="2293.5999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
