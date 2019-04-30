@@ -53,6 +53,7 @@ class AudioRecordingViewController: UIViewController {
     
     
     //Begins recording
+    //This needs to decide where to save the audio, configure the recording settings, then start recording.
     func startRecording() {
         
         //Creates the file initializer
