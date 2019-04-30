@@ -13,7 +13,7 @@
 		02035E8C226F626B00D9FD7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02035E8B226F626B00D9FD7A /* Assets.xcassets */; };
 		02035E8F226F626B00D9FD7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02035E8D226F626B00D9FD7A /* LaunchScreen.storyboard */; };
 		02C6609F2271FBEF0083884A /* AudioRecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6609E2271FBEF0083884A /* AudioRecordingViewController.swift */; };
-		81258ADF2271F8CD0002E9B9 /* Temporary Audio Storage in Resources */ = {isa = PBXBuildFile; fileRef = 81258ADE2271F8CD0002E9B9 /* Temporary Audio Storage */; };
+		A098AA2D22788B0100ED12DD /* AudioEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A098AA2C22788B0100ED12DD /* AudioEditingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,9 @@
 		02035E8B226F626B00D9FD7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02035E8E226F626B00D9FD7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02035E90226F626B00D9FD7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0277477C22788C0900388592 /* AudioRecordingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingTableViewController.swift; sourceTree = "<group>"; };
 		02C6609E2271FBEF0083884A /* AudioRecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingViewController.swift; sourceTree = "<group>"; };
-		81258ADE2271F8CD0002E9B9 /* Temporary Audio Storage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Temporary Audio Storage"; path = "WatchYourTone/Temporary Audio Storage"; sourceTree = SOURCE_ROOT; };
+		A098AA2C22788B0100ED12DD /* AudioEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEditingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +61,10 @@
 			children = (
 				02035E84226F626900D9FD7A /* AppDelegate.swift */,
 				02035E86226F626900D9FD7A /* ViewController.swift */,
+				0277477C22788C0900388592 /* AudioRecordingTableViewController.swift */,
 				02C6609E2271FBEF0083884A /* AudioRecordingViewController.swift */,
+				A098AA2C22788B0100ED12DD /* AudioEditingViewController.swift */,
 				02035E88226F626900D9FD7A /* Main.storyboard */,
-				81258ADE2271F8CD0002E9B9 /* Temporary Audio Storage */,
 				02035E8B226F626B00D9FD7A /* Assets.xcassets */,
 				02035E8D226F626B00D9FD7A /* LaunchScreen.storyboard */,
 				02035E90226F626B00D9FD7A /* Info.plist */,
@@ -129,7 +131,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				02035E8F226F626B00D9FD7A /* LaunchScreen.storyboard in Resources */,
-				81258ADF2271F8CD0002E9B9 /* Temporary Audio Storage in Resources */,
 				02035E8C226F626B00D9FD7A /* Assets.xcassets in Resources */,
 				02035E8A226F626900D9FD7A /* Main.storyboard in Resources */,
 			);
@@ -142,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A098AA2D22788B0100ED12DD /* AudioEditingViewController.swift in Sources */,
 				02C6609F2271FBEF0083884A /* AudioRecordingViewController.swift in Sources */,
 				02035E87226F626900D9FD7A /* ViewController.swift in Sources */,
 				02035E85226F626900D9FD7A /* AppDelegate.swift in Sources */,
@@ -291,7 +293,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4BL5XR2R55;
 				INFOPLIST_FILE = WatchYourTone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +312,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4BL5XR2R55;
 				INFOPLIST_FILE = WatchYourTone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
