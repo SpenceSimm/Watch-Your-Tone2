@@ -44,10 +44,10 @@ class AudioRecordingViewController: UIViewController {
     
     //Placeholder func for now
     func loadRecordingUI() {
-//        recordingButton.setTitle("Tap to Record", for: .normal)
-//        recordingButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
-//        recordingButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
-//        view.addSubview(recordingButton)
+        recordingButton.setTitle("Tap to Record", for: .normal)
+        recordingButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
+        recordingButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
+        view.addSubview(recordingButton)
     }
     
     
