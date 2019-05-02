@@ -46,7 +46,6 @@ class AudioRecordingViewController: UIViewController {
     //Placeholder func for now
     func loadRecordingUI() {
         
-        recordButton = UIButton(frame: CGRect(x: 100, y: 100, width: 128, height: 100))
         recordButton.setTitle("Tap to Record", for: .normal)
     }
     
