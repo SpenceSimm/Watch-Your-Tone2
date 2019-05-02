@@ -20,7 +20,7 @@ class AudioEditingViewController: UIViewController {
     }
     @IBAction func speedChanged(_ sender: Any) {
     }
-    
+      
     let engine = AVAudioEngine()
     let speedControl = AVAudioUnitVarispeed()
     let pitchControl = AVAudioUnitTimePitch()
