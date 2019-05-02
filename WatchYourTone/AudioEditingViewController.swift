@@ -21,7 +21,7 @@ class AudioEditingViewController: UIViewController {
     @IBAction func speedChanged(_ sender: Any) {
     }
     @IBAction func backPressed(_ sender: UIButton) {
-        prepare(for: "Back", sender: AudioRecordingTableViewController)
+        performSegue(withIdentifier: "Back", sender: ) 
     }
     
     let engine = AVAudioEngine()
@@ -59,9 +59,6 @@ class AudioEditingViewController: UIViewController {
         audioPlayer.play()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        performSegue(withIdentifier: "Back", sender: <#T##Any?#>)
-    }
     
 
 
