@@ -218,7 +218,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="3zY-Mb-h7X" kind="show" id="Lui-jl-ctt"/>
+                                    <action selector="backPressed:" destination="Dd8-gy-efY" eventType="touchUpInside" id="XXi-4E-fZa"/>
+                                    <segue destination="3zY-Mb-h7X" kind="show" identifier="Back" id="Lui-jl-ctt"/>
                                 </connections>
                             </button>
                         </subviews>
