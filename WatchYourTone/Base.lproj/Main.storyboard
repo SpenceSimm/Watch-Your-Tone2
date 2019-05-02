@@ -58,26 +58,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W7n-4T-VPU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="531"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W7n-4T-VPU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="529"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOg-F7-Fdh">
                                 <rect key="frame" x="155" y="608" width="65" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Done"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeB-R3-Dgq">
+                                <rect key="frame" x="100" y="554" width="175" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="SeB-R3-Dgq" firstAttribute="top" secondItem="W7n-4T-VPU" secondAttribute="bottom" constant="25" id="1AE-bv-x0k"/>
                             <constraint firstItem="W7n-4T-VPU" firstAttribute="leading" secondItem="Tpv-B2-1WN" secondAttribute="leading" id="EP5-h7-V3o"/>
+                            <constraint firstItem="nOg-F7-Fdh" firstAttribute="top" secondItem="SeB-R3-Dgq" secondAttribute="bottom" constant="15" id="JXg-de-aob"/>
                             <constraint firstItem="Tpv-B2-1WN" firstAttribute="bottom" secondItem="nOg-F7-Fdh" secondAttribute="bottom" constant="20" id="RCT-DP-BfO"/>
                             <constraint firstItem="nOg-F7-Fdh" firstAttribute="leading" secondItem="Tpv-B2-1WN" secondAttribute="leading" constant="155" id="VyK-Qb-8bx"/>
                             <constraint firstItem="W7n-4T-VPU" firstAttribute="top" secondItem="PRD-YT-tmR" secondAttribute="top" id="jVY-3T-bPa"/>
                             <constraint firstItem="Tpv-B2-1WN" firstAttribute="trailing" secondItem="nOg-F7-Fdh" secondAttribute="trailing" constant="155" id="suH-CS-3zk"/>
                             <constraint firstItem="Tpv-B2-1WN" firstAttribute="trailing" secondItem="W7n-4T-VPU" secondAttribute="trailing" id="uho-x1-EM4"/>
+                            <constraint firstItem="SeB-R3-Dgq" firstAttribute="leading" secondItem="Tpv-B2-1WN" secondAttribute="leading" constant="100" id="vaN-CV-xmA"/>
+                            <constraint firstItem="Tpv-B2-1WN" firstAttribute="trailing" secondItem="SeB-R3-Dgq" secondAttribute="trailing" constant="100" id="vz8-er-NDs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tpv-B2-1WN"/>
                     </view>
+                    <connections>
+                        <outlet property="recordButton" destination="SeB-R3-Dgq" id="4bO-UB-Mhq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUx-th-45h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
