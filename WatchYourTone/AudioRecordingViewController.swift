@@ -38,7 +38,8 @@ class AudioRecordingViewController: UIViewController {
     
     
     //Linked to the "Record" button
-    var recordButton: UIButton!
+    
+    @IBOutlet weak var recordButton: UIButton!
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     
@@ -47,9 +48,6 @@ class AudioRecordingViewController: UIViewController {
         
         recordButton = UIButton(frame: CGRect(x: 100, y: 100, width: 128, height: 100))
         recordButton.setTitle("Tap to Record", for: .normal)
-        recordButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
-        recordButton.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
-        view.addSubview(recordButton)
     }
     
     
