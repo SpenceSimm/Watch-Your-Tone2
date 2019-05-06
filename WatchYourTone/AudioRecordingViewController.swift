@@ -10,6 +10,8 @@ import UIKit
 import Speech
 
 class AudioRecordingViewController: UIViewController {
+    
+    static var fileNameArray : [String] = []
 
     //Creates a directory
     func createDirectory(atPath path: String = "SoundFiles",
@@ -48,6 +50,7 @@ class AudioRecordingViewController: UIViewController {
     @IBOutlet weak var recordButton: UIButton!
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
+    var chunkNum = 0
     
     //Placeholder func for now
     func loadRecordingUI() {
@@ -57,15 +60,20 @@ class AudioRecordingViewController: UIViewController {
     func createFile(atPath path: String,
                     contents data: Data?,
                     attributes attr: [FileAttributeKey : Any]? = nil) -> Bool {
+    
+    @IBAction func recordTapped(_ sender: Any) {
+        recordButton.setTitle("Tap to Stop Record", for: .normal)
         
+        startRecording()
     }
+    
     
     //Begins recording
     //This needs to decide where to save the audio, configure the recording settings, then start recording.
     func startRecording() {
         
         //Creates the file initializer
-        let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
+        let audioFilename = getDocumentsDirectory().appendingPathComponent("recording\(chunkNum).m4a")
         
         //Specifications for the file
         let settings = [

@@ -14,13 +14,19 @@ class AudioEditingViewController: UIViewController {
     var Pitch:Int = 0
     var Volume:Int = 0
     var Speed:Int = 0
-    @IBAction func pitchChanged(_ sender: Any) {
+    @IBAction func pitchChanged(_ sender: UISlider) {
+        Pitch = Int((sender.value * 100).rounded()) + 1
     }
-    @IBAction func volumeChanged(_ sender: Any) {
+    @IBAction func volumeChanged(_ sender: UISlider) {
+        
     }
-    @IBAction func speedChanged(_ sender: Any) {
+    @IBAction func speedChanged(_ sender: UISlider) {
+        Pitch = Int((sender.value * 2).rounded())
     }
-      
+    //@IBAction func backPressed(_ sender: UIButton) {
+        //performSegue(withIdentifier: "Back", sender: AudioRecordingTableViewController)
+    //}
+    
     let engine = AVAudioEngine()
     let speedControl = AVAudioUnitVarispeed()
     let pitchControl = AVAudioUnitTimePitch()
@@ -55,6 +61,8 @@ class AudioEditingViewController: UIViewController {
         try engine.start()
         audioPlayer.play()
     }
+    
+    
 
 
 }
