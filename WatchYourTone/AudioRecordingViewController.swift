@@ -9,16 +9,13 @@
 import UIKit
 import Speech
 
+
 class AudioRecordingViewController: UIViewController {
     
     static var fileNameArray : [String] = []
+    
 
-    //Creates a directory
-    func createDirectory(atPath path: String = "SoundFiles",
-                         withIntermediateDirectories createIntermediates: Bool,
-                         attributes: [FileAttributeKey : Any]? = nil) throws {
-        
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,12 +52,6 @@ class AudioRecordingViewController: UIViewController {
     //Placeholder func for now
     func loadRecordingUI() {
         recordButton.setTitle("Tap to Record", for: .normal)
-    }
-    
-    func createFile(atPath path: String,
-                    contents data: Data?,
-                    attributes attr: [FileAttributeKey : Any]? = nil) -> Bool {
-        return true
     }
     
      func recordTapped(_ sender: Any) {

@@ -73,9 +73,6 @@
                                 <rect key="frame" x="50" y="554" width="275" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="recordTapped:" destination="sH1-NH-ukd" eventType="touchUpInside" id="RXl-Y2-eLH"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
