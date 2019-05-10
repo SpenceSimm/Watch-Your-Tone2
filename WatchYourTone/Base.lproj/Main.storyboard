@@ -65,6 +65,9 @@
                                 <rect key="frame" x="50" y="608" width="275" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Tap to Finish Recording"/>
+                                <connections>
+                                    <segue destination="3zY-Mb-h7X" kind="show" id="EtE-MV-oUO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeB-R3-Dgq">
                                 <rect key="frame" x="50" y="554" width="275" height="39"/>
@@ -236,4 +239,7 @@
             <point key="canvasLocation" x="2353" y="134"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="EtE-MV-oUO"/>
+    </inferredMetricsTieBreakers>
 </document>

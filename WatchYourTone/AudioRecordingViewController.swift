@@ -60,11 +60,16 @@ class AudioRecordingViewController: UIViewController {
     func createFile(atPath path: String,
                     contents data: Data?,
                     attributes attr: [FileAttributeKey : Any]? = nil) -> Bool {
+        return true
+    }
     
-    @IBAction func recordTapped(_ sender: Any) {
+     func recordTapped(_ sender: Any) {
         recordButton.setTitle("Tap to Stop Record", for: .normal)
-        
-        startRecording()
+        if audioRecorder == nil {
+            startRecording()
+        } else {
+            finishRecording(success: true)
+        }
     }
     
     
@@ -87,7 +92,7 @@ class AudioRecordingViewController: UIViewController {
         //Attempts to start recording
         do {
             audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
-            audioRecorder.delegate = self as! AVAudioRecorderDelegate
+            audioRecorder.delegate = self as? AVAudioRecorderDelegate
             audioRecorder.record()
             
             //Sets the text in the button to "Tap to Stop" to stop the recording whenever the user wishes
@@ -112,6 +117,7 @@ class AudioRecordingViewController: UIViewController {
         
         if success {
             recordButton.setTitle("Tap to Re-record", for: .normal)
+            chunkNum += 1
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
             // recording failed :(
@@ -120,13 +126,13 @@ class AudioRecordingViewController: UIViewController {
     
     
     //Calls on the recording methods
-    @objc func recordTapped() {
-        if audioRecorder == nil {
-            startRecording()
-        } else {
-            finishRecording(success: true)
-        }
-    }
+//    func recordTapped() {
+//        if audioRecorder == nil {
+//            startRecording()
+//        } else {
+//            finishRecording(success: true)
+//        }
+//    }
     
     
     //Checks if the audio recording has been manually ended
@@ -170,3 +176,4 @@ class AudioRecordingViewController: UIViewController {
     */
 
 }
+
