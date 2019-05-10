@@ -96,7 +96,7 @@ class AudioRecordingViewController: UIViewController {
             
             //Sets the text in the button to "Tap to Stop" to stop the recording whenever the user wishes
             recordButton.setTitle("Tap to Stop", for: .normal)
-            transcribeAudio(url: urlPath)
+            transcribeAudio(url: urlPath!)
         } catch {
             finishRecording(success: false)
         }
