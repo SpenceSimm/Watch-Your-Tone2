@@ -74,7 +74,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="recordTapped:" destination="sH1-NH-ukd" eventType="touchUpInside" id="RXl-Y2-eLH"/>
+                                    <action selector="recordTapped:" destination="sH1-NH-ukd" eventType="touchUpInside" id="9WK-8H-Xzb"/>
                                 </connections>
                             </button>
                         </subviews>
