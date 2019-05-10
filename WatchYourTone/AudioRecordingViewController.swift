@@ -54,7 +54,14 @@ class AudioRecordingViewController: UIViewController {
         recordButton.setTitle("Tap to Record", for: .normal)
     }
     
-     func recordTapped(_ sender: Any) {
+    func createFile(atPath path: String,
+                    contents data: Data?,
+                    attributes attr: [FileAttributeKey : Any]? = nil) -> Bool {
+        return true
+    }
+    
+    
+    @IBAction func recordTapped(_ sender: Any) {
         recordButton.setTitle("Tap to Stop Record", for: .normal)
         if audioRecorder == nil {
             startRecording()
