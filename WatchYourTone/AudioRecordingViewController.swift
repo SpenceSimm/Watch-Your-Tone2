@@ -12,7 +12,7 @@ import Speech
 
 class AudioRecordingViewController: UIViewController {
     
-    static var fileNameArray : [String] = []
+    var fileURLArray : [URL] = []
     
 
 
@@ -54,12 +54,6 @@ class AudioRecordingViewController: UIViewController {
         recordButton.setTitle("Tap to Record", for: .normal)
     }
     
-    func createFile(atPath path: String,
-                    contents data: Data?,
-                    attributes attr: [FileAttributeKey : Any]? = nil) -> Bool {
-        return true
-    }
-    
     
     @IBAction func recordTapped(_ sender: Any) {
         recordButton.setTitle("Tap to Stop Record", for: .normal)
@@ -93,8 +87,16 @@ class AudioRecordingViewController: UIViewController {
             audioRecorder.delegate = self as? AVAudioRecorderDelegate
             audioRecorder.record()
             
+            
+            var urlPath = getDocumentsDirectory().appendingPathComponent("recording\(chunkNum).m4a")
+            
+            fileURLArray.append(urlPath)
+            
+//            print(getDocumentsDirectory().appendingPathComponent("recording\(chunkNum).m4a"))
+            
             //Sets the text in the button to "Tap to Stop" to stop the recording whenever the user wishes
             recordButton.setTitle("Tap to Stop", for: .normal)
+            transcribeAudio(url: urlPath)
         } catch {
             finishRecording(success: false)
         }
