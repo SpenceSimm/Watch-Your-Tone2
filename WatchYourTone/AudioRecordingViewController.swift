@@ -13,7 +13,7 @@ import Speech
 class AudioRecordingViewController: UIViewController {
     
     var fileURLArray : [URL] = []
-    
+    var urlPath: URL?
 
 
     override func viewDidLoad() {
@@ -88,9 +88,9 @@ class AudioRecordingViewController: UIViewController {
             audioRecorder.record()
             
             
-            var urlPath = getDocumentsDirectory().appendingPathComponent("recording\(chunkNum).m4a")
+            urlPath = getDocumentsDirectory().appendingPathComponent("recording\(chunkNum).m4a")
             
-            fileURLArray.append(urlPath)
+            
             
 //            print(getDocumentsDirectory().appendingPathComponent("recording\(chunkNum).m4a"))
             
@@ -117,6 +117,7 @@ class AudioRecordingViewController: UIViewController {
         
         if success {
             recordButton.setTitle("Tap to Re-record", for: .normal)
+            fileURLArray.append(urlPath!)
             chunkNum += 1
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
