@@ -63,7 +63,8 @@ class AudioRecordingViewController: UIViewController {
         return true
     }
     
-     func recordTapped(_ sender: Any) {
+    
+    @IBAction func recordTapped(_ sender: Any) {
         recordButton.setTitle("Tap to Stop Record", for: .normal)
         if audioRecorder == nil {
             startRecording()
