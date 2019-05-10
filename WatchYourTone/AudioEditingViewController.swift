@@ -11,17 +11,19 @@ import AVKit
 
 class AudioEditingViewController: UIViewController {
 
-    var Pitch:Int = 0
-    var Volume:Int = 0
-    var Speed:Int = 0
+    var Pitch:Float = 0.0
+    var Volume:Float = 0.0
+    var Speed:Float = 0.0
     @IBAction func pitchChanged(_ sender: UISlider) {
-        Pitch = Int((sender.value * 100).rounded()) + 1
+        Pitch = Float((sender.value * 50).rounded()) + 1
+        pitchControl.pitch += Pitch
     }
     @IBAction func volumeChanged(_ sender: UISlider) {
-        Volume = Int((sender.value * 5).rounded())
+        Volume = Float((sender.value * 2).rounded()) + 1    
     }
     @IBAction func speedChanged(_ sender: UISlider) {
-        Speed = Int((sender.value * 3).rounded())
+        Speed = Float((sender.value * 3).rounded()) + 1
+        speedControl.rate += Speed
     }
     @IBAction func backPressed(_ sender: UIButton) {
         
@@ -31,6 +33,7 @@ class AudioEditingViewController: UIViewController {
     let engine = AVAudioEngine()
     let speedControl = AVAudioUnitVarispeed()
     let pitchControl = AVAudioUnitTimePitch()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
