@@ -95,6 +95,7 @@
                     </view>
                     <connections>
                         <outlet property="recordButton" destination="SeB-R3-Dgq" id="4bO-UB-Mhq"/>
+                        <outlet property="stackView" destination="W7n-4T-VPU" id="aI0-5c-1V1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUx-th-45h" userLabel="First Responder" sceneMemberID="firstResponder"/>

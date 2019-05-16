@@ -119,11 +119,22 @@ class AudioRecordingViewController: UIViewController {
             recordButton.setTitle("Tap to Re-record", for: .normal)
             fileURLArray.append(urlPath!)
             transcribeAudio(url: urlPath!)
+            print(fileURLArray)
             chunkNum += 1
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
             // recording failed :(
         }
+    }
+    
+    @IBOutlet weak var stackView: UIStackView!
+    
+    func makeAudioLabel(name: String){
+        let label = UILabel()
+        label.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
+        label.text = name
+        self.stackView.addSubview(label)
     }
     
     
