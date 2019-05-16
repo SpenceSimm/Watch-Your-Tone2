@@ -131,9 +131,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Dd8-gy-efY" kind="show" id="MAY-hl-2Dn"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
