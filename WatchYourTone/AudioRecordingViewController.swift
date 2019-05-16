@@ -92,11 +92,11 @@ class AudioRecordingViewController: UIViewController {
             
             
             
-//            print(getDocumentsDirectory().appendingPathComponent("recording\(chunkNum).m4a"))
+//            pr]int(getDocumentsDirectory().appendingPathComponent("recording\(chunkNum).m4a"))
             
             //Sets the text in the button to "Tap to Stop" to stop the recording whenever the user wishes
             recordButton.setTitle("Tap to Stop", for: .normal)
-            transcribeAudio(url: urlPath!)
+            
         } catch {
             finishRecording(success: false)
         }
@@ -118,6 +118,7 @@ class AudioRecordingViewController: UIViewController {
         if success {
             recordButton.setTitle("Tap to Re-record", for: .normal)
             fileURLArray.append(urlPath!)
+            transcribeAudio(url: urlPath!)
             chunkNum += 1
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)

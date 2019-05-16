@@ -15,17 +15,17 @@ class AudioEditingViewController: UIViewController {
     var Volume:Float = 0.0
     var Speed:Float = 0.0
     @IBAction func pitchChanged(_ sender: UISlider) {
-        Pitch = Float((sender.value * 50).rounded()) + 1
+        Pitch = Float((sender.value * 50).rounded()) + 1.0
         pitchControl.pitch += Pitch
     }
     @IBAction func volumeChanged(_ sender: UISlider) {
-        Volume = Float((sender.value * 2).rounded()) + 1    
+        Volume = Float((sender.value * 2).rounded()) + 1.0
     }
     @IBAction func speedChanged(_ sender: UISlider) {
-        Speed = Float((sender.value * 3).rounded()) + 1
+        Speed = Float((sender.value * 3).rounded()) + 1.0
         speedControl.rate += Speed
     }
-    @IBAction func backPressed(_ sender: UIButton) {
+    @IBAction func donePressed(_ sender: UIButton) {
         
     }
     
