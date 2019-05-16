@@ -14,6 +14,20 @@ class AudioRecordingViewController: UIViewController {
     
     var fileURLArray : [URL] = []
     var urlPath: URL?
+    var transcriptionList: [String] = []
+    
+    //Returns a URL on the specified index
+    func getURL(index: Int) -> URL {
+        return self.fileURLArray[index]
+    }
+    
+    func getLengthOfArray() -> Int {
+        return self.fileURLArray.count
+    }
+    
+    func getTranscription(index: Int) -> String {
+        return self.transcriptionList[index]
+    }
 
 
     override func viewDidLoad() {
@@ -119,11 +133,22 @@ class AudioRecordingViewController: UIViewController {
             recordButton.setTitle("Tap to Re-record", for: .normal)
             fileURLArray.append(urlPath!)
             transcribeAudio(url: urlPath!)
+            print(fileURLArray)
             chunkNum += 1
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
             // recording failed :(
         }
+    }
+    
+    @IBOutlet weak var stackView: UIStackView!
+    
+    func makeAudioLabel(name: String){
+        let label = UILabel()
+        label.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
+        label.text = name
+        self.stackView.addSubview(label)
     }
     
     
@@ -161,6 +186,7 @@ class AudioRecordingViewController: UIViewController {
             // if we got the final transcription back, print it
             if result.isFinal {
                 // pull out the best transcription...
+                    self.transcriptionList.append(result.bestTranscription.formattedString)
                 print(result.bestTranscription.formattedString)
             }
         }

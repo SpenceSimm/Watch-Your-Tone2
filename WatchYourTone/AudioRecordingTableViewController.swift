@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Speech
 
 class AudioRecordingTableViewController: UITableViewController { 
 
@@ -24,7 +25,7 @@ class AudioRecordingTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return AudioRecordingViewController.getLengthOfArray()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
