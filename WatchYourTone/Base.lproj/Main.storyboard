@@ -221,17 +221,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Button" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOQ-vU-Z8f">
-                                <rect key="frame" x="162" y="606" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UN5-mR-Noi">
+                                <rect key="frame" x="164.5" y="597" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="Dd8-gy-efY" eventType="touchUpInside" id="BZi-W0-HM4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="B4t-FL-Wot" firstAttribute="bottom" secondItem="EOQ-vU-Z8f" secondAttribute="bottom" constant="40" id="GMz-og-bSt"/>
-                            <constraint firstItem="EOQ-vU-Z8f" firstAttribute="centerX" secondItem="LXa-Kl-yka" secondAttribute="centerX" id="blG-uu-k5U"/>
+                            <constraint firstItem="UN5-mR-Noi" firstAttribute="centerX" secondItem="LXa-Kl-yka" secondAttribute="centerX" id="Jsa-4q-xoe"/>
+                            <constraint firstItem="B4t-FL-Wot" firstAttribute="bottom" secondItem="UN5-mR-Noi" secondAttribute="bottom" constant="40" id="R3s-ho-KZE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B4t-FL-Wot"/>
                     </view>
