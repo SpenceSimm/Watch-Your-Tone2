@@ -14,6 +14,20 @@ class AudioRecordingViewController: UIViewController {
     
     var fileURLArray : [URL] = []
     var urlPath: URL?
+    var transcriptionList: [String] = []
+    
+    //Returns a URL on the specified index
+    func getURL(index: Int) -> URL {
+        return self.fileURLArray[index]
+    }
+    
+    func getLengthOfArray() -> Int {
+        return self.fileURLArray.count
+    }
+    
+    func getTranscription(index: Int) -> String {
+        return self.transcriptionList[index]
+    }
 
 
     override func viewDidLoad() {
@@ -161,6 +175,7 @@ class AudioRecordingViewController: UIViewController {
             // if we got the final transcription back, print it
             if result.isFinal {
                 // pull out the best transcription...
+                    self.transcriptionList.append(result.bestTranscription.formattedString)
                 print(result.bestTranscription.formattedString)
             }
         }
