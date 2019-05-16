@@ -201,7 +201,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aZZ-f4-0s0">
-                                <rect key="frame" x="23" y="360" width="329" height="31"/>
+                                <rect key="frame" x="23" y="359" width="329" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="speedChanged:" destination="Dd8-gy-efY" eventType="valueChanged" id="O2J-0l-NBa"/>
@@ -221,18 +221,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4T-up-VAD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UN5-mR-Noi">
                                 <rect key="frame" x="164.5" y="597" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="donePressed:" destination="Dd8-gy-efY" eventType="touchUpInside" id="oTz-tq-vbM"/>
+                                    <action selector="donePressed:" destination="Dd8-gy-efY" eventType="touchUpInside" id="BZi-W0-HM4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lower" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzx-HR-Cu9">
+                                <rect key="frame" x="16" y="129" width="47" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Higher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcb-uA-Lk3">
+                                <rect key="frame" x="307" y="129" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="c4T-up-VAD" firstAttribute="centerX" secondItem="LXa-Kl-yka" secondAttribute="centerX" id="YTl-vF-8tt"/>
-                            <constraint firstItem="B4t-FL-Wot" firstAttribute="bottom" secondItem="c4T-up-VAD" secondAttribute="bottom" constant="40" id="usP-8c-h9k"/>
+                            <constraint firstItem="UN5-mR-Noi" firstAttribute="centerX" secondItem="LXa-Kl-yka" secondAttribute="centerX" id="Jsa-4q-xoe"/>
+                            <constraint firstItem="B4t-FL-Wot" firstAttribute="bottom" secondItem="UN5-mR-Noi" secondAttribute="bottom" constant="40" id="R3s-ho-KZE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B4t-FL-Wot"/>
                     </view>

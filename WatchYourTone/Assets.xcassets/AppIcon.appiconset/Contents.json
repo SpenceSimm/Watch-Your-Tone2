@@ -78,13 +78,15 @@
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "WatchYourTone iPad2x AppIcon.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "size" : "83.5x83.5",
+      "idiom" : "ipad",
+      "filename" : "WatchYourTone iPad 8.35px 2x AppIcon.png",
       "scale" : "2x"
     },
     {
