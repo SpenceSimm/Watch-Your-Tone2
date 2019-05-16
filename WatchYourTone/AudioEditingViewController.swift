@@ -46,7 +46,7 @@ class AudioEditingViewController: UIViewController {
         let file = try AVAudioFile(forReading: url)
         
         // 2: create the audio player
-        let audioPlayer = AVAudioPlayerNode() 
+        let audioPlayer = AVAudioPlayerNode()
         
         // 3: connect the components to our playback engine
         engine.attach(audioPlayer)
