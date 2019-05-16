@@ -12,6 +12,10 @@ import Speech
 
 class AudioRecordingViewController: UIViewController {
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    }
+    
     var fileURLArray : [URL] = []
     var urlPath: URL?
     var transcriptionList: [String] = []
