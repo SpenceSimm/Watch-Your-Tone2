@@ -18,7 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap &quot;begin&quot; to go to the recording screen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBM-zG-5ur">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WatchYourTone LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="rEO-Ri-DMI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap &quot;Begin&quot; to go to the recording screen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBM-zG-5ur">
                                 <rect key="frame" x="10" y="97" width="355" height="67"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
@@ -48,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34" y="134"/>
+            <point key="canvasLocation" x="32.799999999999997" y="133.5832083958021"/>
         </scene>
         <!--Audio Recording View Controller-->
         <scene sceneID="buO-OF-Tsh">
@@ -95,16 +99,17 @@
                     </view>
                     <connections>
                         <outlet property="recordButton" destination="SeB-R3-Dgq" id="4bO-UB-Mhq"/>
+                        <outlet property="stackView" destination="W7n-4T-VPU" id="aI0-5c-1V1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUx-th-45h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="781.60000000000002" y="133.5832083958021"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Audio Recording Table View Controller-->
         <scene sceneID="dZP-GN-tdB">
             <objects>
-                <tableViewController id="3zY-Mb-h7X" sceneMemberID="viewController">
+                <tableViewController id="3zY-Mb-h7X" customClass="AudioRecordingTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6is-8l-zEN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,17 +221,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQf-qy-IRZ">
-                                <rect key="frame" x="22" y="6" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4T-up-VAD">
+                                <rect key="frame" x="164.5" y="597" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="backPressed:" destination="Dd8-gy-efY" eventType="touchUpInside" id="XXi-4E-fZa"/>
-                                    <segue destination="3zY-Mb-h7X" kind="show" identifier="Back" id="Lui-jl-ctt"/>
+                                    <action selector="donePressed:" destination="Dd8-gy-efY" eventType="touchUpInside" id="oTz-tq-vbM"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c4T-up-VAD" firstAttribute="centerX" secondItem="LXa-Kl-yka" secondAttribute="centerX" id="YTl-vF-8tt"/>
+                            <constraint firstItem="B4t-FL-Wot" firstAttribute="bottom" secondItem="c4T-up-VAD" secondAttribute="bottom" constant="40" id="usP-8c-h9k"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="B4t-FL-Wot"/>
                     </view>
                     <connections>
@@ -239,7 +246,7 @@
             <point key="canvasLocation" x="2353" y="134"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="EtE-MV-oUO"/>
-    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="WatchYourTone LaunchScreen" width="1080" height="1920"/>
+    </resources>
 </document>
