@@ -187,6 +187,7 @@ class AudioRecordingViewController: UIViewController {
             if result.isFinal {
                 // pull out the best transcription...
                     self.transcriptionList.append(result.bestTranscription.formattedString)
+                print(self.transcriptionList)
                 print(result.bestTranscription.formattedString)
             }
         }
