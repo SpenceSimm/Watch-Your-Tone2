@@ -15,14 +15,14 @@ class AudioEditingViewController: UIViewController {
     var Volume:Float = 0.0
     var Speed:Float = 0.0
     @IBAction func pitchChanged(_ sender: UISlider) {
-        Pitch = Float((sender.value * 50).rounded()) + 1.0
+        Pitch = Float((sender.value * 50.0).rounded()) + 1.0
         pitchControl.pitch += Pitch
     }
     @IBAction func volumeChanged(_ sender: UISlider) {
-        Volume = Float((sender.value * 1).rounded()) + 1.0
+        Volume = Float((sender.value * 1.0).rounded()) + 1.0
     }
     @IBAction func speedChanged(_ sender: UISlider) {
-        Speed = Float((sender.value * 3).rounded()) + 1.0
+        Speed = Float((sender.value * 3.0).rounded()) + 1.0
         speedControl.rate += Speed
     }
     @IBAction func donePressed(_ sender: UIButton) {
@@ -46,7 +46,7 @@ class AudioEditingViewController: UIViewController {
         let file = try AVAudioFile(forReading: url)
         
         // 2: create the audio player
-        let audioPlayer = AVAudioPlayerNode()
+        let audioPlayer = AVAudioPlayerNode() 
         
         // 3: connect the components to our playback engine
         engine.attach(audioPlayer)
