@@ -19,7 +19,7 @@ class AudioEditingViewController: UIViewController {
         pitchControl.pitch += Pitch
     }
     @IBAction func volumeChanged(_ sender: UISlider) {
-        Volume = Float((sender.value * 2).rounded()) + 1.0
+        Volume = Float((sender.value * 1).rounded()) + 1.0
     }
     @IBAction func speedChanged(_ sender: UISlider) {
         Speed = Float((sender.value * 3).rounded()) + 1.0
