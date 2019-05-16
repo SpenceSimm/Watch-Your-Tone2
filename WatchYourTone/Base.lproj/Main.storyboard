@@ -216,10 +216,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQf-qy-IRZ">
-                                <rect key="frame" x="22" y="6" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQf-qy-IRZ">
+                                <rect key="frame" x="169" y="597" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="backPressed:" destination="Dd8-gy-efY" eventType="touchUpInside" id="XXi-4E-fZa"/>
                                     <segue destination="3zY-Mb-h7X" kind="show" identifier="Back" id="Lui-jl-ctt"/>
@@ -227,6 +226,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EQf-qy-IRZ" firstAttribute="centerX" secondItem="LXa-Kl-yka" secondAttribute="centerX" id="DAh-h3-rMK"/>
+                            <constraint firstItem="B4t-FL-Wot" firstAttribute="bottom" secondItem="EQf-qy-IRZ" secondAttribute="bottom" constant="40" id="vqN-XQ-rJu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="B4t-FL-Wot"/>
                     </view>
                     <connections>
@@ -240,6 +243,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EtE-MV-oUO"/>
+        <segue reference="Lui-jl-ctt"/>
     </inferredMetricsTieBreakers>
 </document>
