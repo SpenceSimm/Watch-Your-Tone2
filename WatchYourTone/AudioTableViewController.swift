@@ -2,7 +2,7 @@
 //  AudioTableViewController.swift
 //  WatchYourTone
 //
-//  Created by Simmons, Spence D on 4/25/19.
+//  Created by Sage Simmons on 5/19/19.
 //  Copyright © 2019 Simmons, Spence D. All rights reserved.
 //
 
@@ -10,9 +10,11 @@ import UIKit
 
 class AudioTableViewController: UITableViewController {
 
+    var urlArray : [URL] = []
+    var transcriptionArray : [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,23 +26,24 @@ class AudioTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return transcriptionArray.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AudioCell", for: indexPath)
+        let file = urlArray[indexPath.row]
+        let transcription = transcriptionArray[indexPath.row]
+        cell.textLabel?.text = transcription
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -52,7 +55,7 @@ class AudioTableViewController: UITableViewController {
 
     /*
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
