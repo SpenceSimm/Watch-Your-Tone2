@@ -12,13 +12,15 @@ import Speech
 
 class AudioRecordingViewController: UIViewController {
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-    }
     
     var fileURLArray : [URL] = []
     var urlPath: URL?
     var transcriptionList: [String] = []
+    let labelHeight = 40.0
+    let labelWidth = 375.0
+    let xPos = 20.0
+    let yPos = 30.0
+    var yMod = 0.0
     
     //Returns a URL on the specified index
     func getURL(index: Int) -> URL {
@@ -31,6 +33,10 @@ class AudioRecordingViewController: UIViewController {
     
     func getTranscription(index: Int) -> String {
         return self.transcriptionList[index]
+    }
+    
+    func getTranscriptionList() -> [String]{
+        return self.transcriptionList
     }
 
 
@@ -137,22 +143,26 @@ class AudioRecordingViewController: UIViewController {
             recordButton.setTitle("Tap to Re-record", for: .normal)
             fileURLArray.append(urlPath!)
             transcribeAudio(url: urlPath!)
-            print(fileURLArray)
+            //print(fileURLArray)
             chunkNum += 1
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
             // recording failed :(
         }
     }
+
+    @IBOutlet weak var containingView: UIView!
     
-    @IBOutlet weak var stackView: UIStackView!
     
     func makeAudioLabel(name: String){
-        let label = UILabel()
-        label.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
-        label.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
+        let label = UILabel(frame: CGRect(x: xPos, y: yPos + yMod, width: labelWidth, height: labelHeight))
+        yMod += 100.0
+        let fontSize : CGFloat = 40.0
         label.text = name
-        self.stackView.addSubview(label)
+        label.numberOfLines = 1
+        label.textAlignment = .center
+        label.font = UIFont(name: "System", size: fontSize)
+        self.containingView.addSubview(label)
     }
     
     
@@ -193,20 +203,26 @@ class AudioRecordingViewController: UIViewController {
                     self.transcriptionList.append(result.bestTranscription.formattedString)
                 print(self.transcriptionList)
                 print(result.bestTranscription.formattedString)
+                self.makeAudioLabel(name: result.bestTranscription.formattedString)
             }
         }
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
+        let destination = segue.destination as! AudioTableViewController
+        
         // Pass the selected object to the new view controller.
+        destination.urlArray = fileURLArray
+        destination.transcriptionArray = transcriptionList
+        
     }
-    */
+ 
 
 }
 
