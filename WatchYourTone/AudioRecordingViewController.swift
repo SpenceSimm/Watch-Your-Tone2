@@ -19,6 +19,7 @@ class AudioRecordingViewController: UIViewController {
     var fileURLArray : [URL] = []
     var urlPath: URL?
     var transcriptionList: [String] = []
+    var chunkNum = 0
     
     //Returns a URL on the specified index
     func getURL(index: Int) -> URL {
@@ -65,7 +66,7 @@ class AudioRecordingViewController: UIViewController {
     @IBOutlet weak var recordButton: UIButton!
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
-    var chunkNum = 0
+    
     
     //Placeholder func for now
     func loadRecordingUI() {
@@ -135,9 +136,11 @@ class AudioRecordingViewController: UIViewController {
         
         if success {
             recordButton.setTitle("Tap to Re-record", for: .normal)
-            fileURLArray.append(urlPath!)
+            self.fileURLArray.append(urlPath!)
             transcribeAudio(url: urlPath!)
-            print(fileURLArray)
+            print(self.fileURLArray)
+            print(self.transcriptionList)
+            //makeAudioLabel(name: self.transcriptionList[chunkNum])
             chunkNum += 1
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
@@ -191,7 +194,7 @@ class AudioRecordingViewController: UIViewController {
             if result.isFinal {
                 // pull out the best transcription...
                     self.transcriptionList.append(result.bestTranscription.formattedString)
-                print(self.transcriptionList)
+                
                 print(result.bestTranscription.formattedString)
             }
         }
