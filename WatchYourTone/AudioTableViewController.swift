@@ -11,11 +11,16 @@ import AVKit
 
 class AudioTableViewController: UITableViewController {
 
-    var audioPlayer = AVAudioPlayer()
+    var engine = AVAudioEngine()
+    
+    
+    var audioQueue = AVQueuePlayer()
     var audioArray : [AudioFile] = []
     var transcriptionArray : [String] = []
+    var AVAudioArray : [AVAudioFile] = []
+    var AVAssetArray : [AVAsset] = []
+    var urlArray : [URL] = []
     var selectedIndex = 0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,22 +58,18 @@ class AudioTableViewController: UITableViewController {
         performSegue(withIdentifier: "editSegue", sender: self)
     }
     
-    func play(){
-        for index in 0...(audioArray.count - 1){
-            do{
-                audioPlayer = try AVAudioPlayer(contentsOf: audioArray[index].url)
-                audioPlayer.prepareToPlay()
+    @IBAction func playAllPressed(_ sender: Any) {
+        var queuedFiles : [AVPlayerItem] = []
+        if audioArray.count > 0 {
+            for index in 0...(audioArray.count - 1){
+                queuedFiles.append(AVPlayerItem(asset: AVAssetArray[index]))
             }
-            catch{
-                print(error.localizedDescription)
-            }
-            
-            audioPlayer.play()
+            audioQueue = AVQueuePlayer(items: queuedFiles)
+            audioQueue.play()
         }
+        
     }
     
-    
- 
 
     /*
     // Override to support conditional editing of the table view.
@@ -90,12 +91,12 @@ class AudioTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
+//    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+//
+//    }
+ 
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -114,10 +115,11 @@ class AudioTableViewController: UITableViewController {
         if case segue.identifier = "editSegue"{
             var destination = segue.destination as! AudioEditingViewController
             destination.navigationItem.title = transcriptionArray[selectedIndex]
-            destination.url = audioArray[selectedIndex].url
-            destination.Pitch = audioArray[selectedIndex].pitch
-            destination.Volume = audioArray[selectedIndex].volume
-            destination.Speed = audioArray[selectedIndex].speed
+            destination.asset = AVAssetArray[selectedIndex]
+//            destination.Speed = AVAssetArray[selectedIndex].preferredRate
+//            destination.Volume = AVAssetArray[selectedIndex].preferredVolume
+            destination.url = urlArray[selectedIndex]
+            destination.index = selectedIndex
         }
         
         // Pass the selected object to the new view controller.

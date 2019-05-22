@@ -8,38 +8,71 @@
 
 import UIKit
 import AVKit
-import AVFoundation
+//import AVFoundation
 
 class AudioEditingViewController: UIViewController {
 
+    var audioQueue = AVQueuePlayer()
     var Pitch:Float = 0.0
     var Volume:Float = 0.0
     var Speed:Float = 0.0
     var url: URL?
-    @IBAction func pitchChanged(_ sender: UISlider) {
-        Pitch = Float((sender.value * 50.0).rounded()) + 1.0
-        pitchControl.pitch += Pitch
+    var asset: AVAsset?
+    var index: Int = 0
+    
+    
+    @IBOutlet weak var pitchSlider: UISlider!
+    
+    @IBOutlet weak var volumeSlider: UISlider!
+    
+    @IBOutlet weak var speedSlider: UISlider!
+    
+    @IBAction func setPitch(_ sender: Any) {
+        pitchControl = AVAudioUnitTimePitch()
+        pitchControl.pitch += pitchSlider.value
     }
-    @IBAction func volumeChanged(_ sender: UISlider) {
-        Volume = Float((sender.value * 1.0).rounded()) + 1.0
+    
+    @IBAction func setVolume(_ sender: Any) {
+        Volume = 0
+        Volume += volumeSlider.value
+        //asset?.preferredVolume = Volume
     }
-    @IBAction func speedChanged(_ sender: UISlider) {
-        Speed = Float((sender.value * 3.0).rounded()) + 1.0
-        speedControl.rate += Speed
+    
+    @IBAction func setSpeed(_ sender: Any) {
+        speedControl = AVAudioUnitVarispeed()
+        speedControl.rate += speedSlider.value
     }
+    
+    
+//    @IBAction func pitchChanged(_ sender: UISlider) {
+//        Pitch = Float((sender.value).rounded()) + 1.0
+//        pitchControl.pitch += Pitch
+//    }
+//    @IBAction func volumeChanged(_ sender: UISlider) {
+//        Volume = Float((sender.value).rounded()) + 1.0
+//    }
+//    @IBAction func speedChanged(_ sender: UISlider) {
+//        Speed = Float((sender.value).rounded()) + 1.0
+//        speedControl.rate += Speed
+//    }
     @IBAction func donePressed(_ sender: UIButton) {
         if let url = url{
-             //play(url)
-                
+            do{
+                try play(url)
+            }
+            catch{
+                print(error.localizedDescription)
+            }
+            
             
         }
 
     }
 
 
-    let engine = AVAudioEngine()
-    let speedControl = AVAudioUnitVarispeed()
-    let pitchControl = AVAudioUnitTimePitch()
+    var engine = AVAudioEngine()
+    var speedControl = AVAudioUnitVarispeed()
+    var pitchControl = AVAudioUnitTimePitch()
 
 
     override func viewDidLoad() {
@@ -50,11 +83,12 @@ class AudioEditingViewController: UIViewController {
 
     func play(_ url: URL) throws {
         // 1: load the file
+        var file = AVAudioFile()
         do{
-            let file = try AVAudioFile(forReading: url)
+            file = try AVAudioFile(forReading: url)
         }
         catch{
-            print(error)
+            print(error.localizedDescription)
         }
         
 
@@ -72,12 +106,22 @@ class AudioEditingViewController: UIViewController {
         engine.connect(pitchControl, to: engine.mainMixerNode, format: nil)
 
         // 5: prepare the player to play its file from the beginning
-        //audioPlayer.scheduleFile(file, at: nil)
+        audioPlayer.scheduleFile(file, at: nil)
 
         // 6: start the engine and player
-        try engine.start()
+        do{
+            try engine.start()
+        }
+        catch{
+            print(error.localizedDescription)
+        }
+        
+        
         audioPlayer.play()
     }
 
+//    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+//        <#code#>
+//    }
 
 }
