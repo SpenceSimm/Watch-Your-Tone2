@@ -12,6 +12,7 @@ import AVKit
 
 class AudioEditingViewController: UIViewController {
 
+    
     var audioQueue = AVQueuePlayer()
     var Pitch:Float = 0.0
     var Volume:Float = 0.0
@@ -107,7 +108,8 @@ class AudioEditingViewController: UIViewController {
 
         // 5: prepare the player to play its file from the beginning
         audioPlayer.scheduleFile(file, at: nil)
-
+        
+        
         // 6: start the engine and player
         do{
             try engine.start()
@@ -115,7 +117,6 @@ class AudioEditingViewController: UIViewController {
         catch{
             print(error.localizedDescription)
         }
-        
         
         audioPlayer.play()
     }
