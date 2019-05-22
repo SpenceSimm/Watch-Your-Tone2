@@ -14,32 +14,51 @@ class AudioEditingViewController: UIViewController {
 
     var audioQueue = AVQueuePlayer()
     var Pitch:Float = 0.0
-    var Volume:Float = 0.0
-    var Speed:Float = 0.0
+    var defaultPitch: Float{
+        return pitchControl.pitch
+    }
+    var Speed = 0.0
+    var defaultSpeed:Float{
+        return speedControl.rate
+    }
     var url: URL?
     var asset: AVAsset?
     var index: Int = 0
+    let audioPlayer = AVAudioPlayerNode()
+    var defaultVolume:Float {
+        return audioPlayer.volume
+    }
+    var Volume : Float = 0
+    
     
     
     @IBOutlet weak var pitchSlider: UISlider!
     
     @IBOutlet weak var volumeSlider: UISlider!
     
+    func setUpVolume(){
+        volumeSlider.value = defaultVolume
+        volumeSlider.maximumValue = (defaultVolume + 50)
+        volumeSlider.minimumValue = (defaultVolume - defaultVolume)
+    }
+    
     @IBOutlet weak var speedSlider: UISlider!
     
     @IBAction func setPitch(_ sender: Any) {
         pitchControl = AVAudioUnitTimePitch()
+        //pitchControl.pitch = defaultPitch
         pitchControl.pitch += pitchSlider.value
     }
     
     @IBAction func setVolume(_ sender: Any) {
-        Volume = 0
-        Volume += volumeSlider.value
+        Volume = defaultVolume
+        Volume = volumeSlider.value
         //asset?.preferredVolume = Volume
     }
     
     @IBAction func setSpeed(_ sender: Any) {
         speedControl = AVAudioUnitVarispeed()
+        //speedControl.rate = defaultSpeed
         speedControl.rate += speedSlider.value
     }
     
@@ -91,9 +110,10 @@ class AudioEditingViewController: UIViewController {
             print(error.localizedDescription)
         }
         
+        audioPlayer.volume = Volume
 
         // 2: create the audio player
-        let audioPlayer = AVAudioPlayerNode()
+        //let audioPlayer = AVAudioPlayerNode()
 
         // 3: connect the components to our playback engine
         engine.attach(audioPlayer)
