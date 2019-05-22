@@ -8,6 +8,7 @@
 
 import UIKit
 import Speech
+import AVKit
 
 
 class AudioRecordingViewController: UIViewController {
@@ -16,10 +17,13 @@ class AudioRecordingViewController: UIViewController {
     var fileURLArray : [URL] = []
     var urlPath: URL?
     var transcriptionList: [String] = []
+    var AVAudioList: [AVAudioFile] = []
+    var AVAssetList: [AVAsset] = []
+    var audioList: [AudioFile] = []
     let labelHeight = 40.0
     let labelWidth = 375.0
     let xPos = 20.0
-    let yPos = 30.0
+    let yPos = 100.0
     var yMod = 0.0
     
     //Returns a URL on the specified index
@@ -201,7 +205,17 @@ class AudioRecordingViewController: UIViewController {
             if result.isFinal {
                 // pull out the best transcription...
                     self.transcriptionList.append(result.bestTranscription.formattedString)
-                
+                self.audioList.append(AudioFile(url: self.fileURLArray[self.chunkNum - 1], volume: 0, pitch: 0, speed: 0))
+                var file = AVAudioFile()
+                do{
+                    file = try AVAudioFile(forReading: self.fileURLArray[self.chunkNum - 1])
+
+                }
+                catch{
+                    print(error.localizedDescription)
+                }
+                self.AVAssetList.append(AVAsset(url: self.fileURLArray[self.chunkNum - 1]))
+                self.AVAudioList.append(file)
                 print(result.bestTranscription.formattedString)
                 self.makeAudioLabel(name: result.bestTranscription.formattedString)
             }
@@ -218,9 +232,11 @@ class AudioRecordingViewController: UIViewController {
         let destination = segue.destination as! AudioTableViewController
         
         // Pass the selected object to the new view controller.
-        destination.urlArray = fileURLArray
+        destination.audioArray = audioList
         destination.transcriptionArray = transcriptionList
-        
+        destination.urlArray = fileURLArray
+        destination.AVAudioArray = AVAudioList
+        destination.AVAssetArray = AVAssetList
     }
  
 

@@ -15,6 +15,7 @@
 		02C6609F2271FBEF0083884A /* AudioRecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C6609E2271FBEF0083884A /* AudioRecordingViewController.swift */; };
 		A098AA2D22788B0100ED12DD /* AudioEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A098AA2C22788B0100ED12DD /* AudioEditingViewController.swift */; };
 		BD5AFB7C22924D8F00409416 /* AudioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5AFB7B22924D8F00409416 /* AudioTableViewController.swift */; };
+		BDD9343822943A87004DD857 /* AudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD9343722943A87004DD857 /* AudioFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		02C6609E2271FBEF0083884A /* AudioRecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingViewController.swift; sourceTree = "<group>"; };
 		A098AA2C22788B0100ED12DD /* AudioEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEditingViewController.swift; sourceTree = "<group>"; };
 		BD5AFB7B22924D8F00409416 /* AudioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTableViewController.swift; sourceTree = "<group>"; };
+		BDD9343722943A87004DD857 /* AudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				02035E86226F626900D9FD7A /* ViewController.swift */,
 				02C6609E2271FBEF0083884A /* AudioRecordingViewController.swift */,
 				A098AA2C22788B0100ED12DD /* AudioEditingViewController.swift */,
+				BDD9343722943A87004DD857 /* AudioFile.swift */,
 				02035E88226F626900D9FD7A /* Main.storyboard */,
 				BD5AFB7B22924D8F00409416 /* AudioTableViewController.swift */,
 				02035E8B226F626B00D9FD7A /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD9343822943A87004DD857 /* AudioFile.swift in Sources */,
 				A098AA2D22788B0100ED12DD /* AudioEditingViewController.swift in Sources */,
 				02C6609F2271FBEF0083884A /* AudioRecordingViewController.swift in Sources */,
 				BD5AFB7C22924D8F00409416 /* AudioTableViewController.swift in Sources */,

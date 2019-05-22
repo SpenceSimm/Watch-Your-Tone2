@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import AVKit
 
 class AudioTableViewController: UITableViewController {
 
-    var urlArray : [URL] = []
+    var engine = AVAudioEngine()
+    
+    
+    var audioQueue = AVQueuePlayer()
+    var audioArray : [AudioFile] = []
     var transcriptionArray : [String] = []
+    var AVAudioArray : [AVAudioFile] = []
+    var AVAssetArray : [AVAsset] = []
+    var urlArray : [URL] = []
+    var selectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +28,7 @@ class AudioTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -37,13 +46,30 @@ class AudioTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AudioCell", for: indexPath)
-        let file = urlArray[indexPath.row]
+        let file = audioArray[indexPath.row].url
         let transcription = transcriptionArray[indexPath.row]
         cell.textLabel?.text = transcription
 
         return cell
     }
- 
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        performSegue(withIdentifier: "editSegue", sender: self)
+    }
+    
+    @IBAction func playAllPressed(_ sender: Any) {
+        var queuedFiles : [AVPlayerItem] = []
+        if audioArray.count > 0 {
+            for index in 0...(audioArray.count - 1){
+                queuedFiles.append(AVPlayerItem(asset: AVAssetArray[index]))
+            }
+            audioQueue = AVQueuePlayer(items: queuedFiles)
+            audioQueue.play()
+        }
+        
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -65,12 +91,12 @@ class AudioTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
+//    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+//
+//    }
+ 
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -80,14 +106,25 @@ class AudioTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
+        if case segue.identifier = "editSegue"{
+            var destination = segue.destination as! AudioEditingViewController
+            destination.navigationItem.title = transcriptionArray[selectedIndex]
+            destination.asset = AVAssetArray[selectedIndex]
+//            destination.Speed = AVAssetArray[selectedIndex].preferredRate
+//            destination.Volume = AVAssetArray[selectedIndex].preferredVolume
+            destination.url = urlArray[selectedIndex]
+            destination.index = selectedIndex
+        }
+        
         // Pass the selected object to the new view controller.
+        
     }
-    */
+ 
 
 }
